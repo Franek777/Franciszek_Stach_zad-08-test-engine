@@ -24,3 +24,12 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task runTestEngine(type: JavaExec) {
+    mainClass = 'uj.wmii.pwj.anns.MyTestEngine'
+    classpath = sourceSets.main.runtimeClasspath
+    args = [
+            'uj.wmii.pwj.anns.MyBeautifulTestSuite'
+    ]
+    standardInput = System.in
+}
